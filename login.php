@@ -9,7 +9,7 @@
             <title>Connexion</title>
 			
 			<link rel="stylesheet" href="./css/style.css">
-   
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
         </head>
 
         <body>
@@ -86,14 +86,14 @@
                     <input type="email" name="email" class="form-control" placeholder="Email" required="required" autocomplete="off">
                 </div>
                 <div class="form-element">
-                    <input type="password" name="password" class="form-control" placeholder="Mot de passe" required="required" autocomplete="off">
+                    <input type="password" name="password" class="form-control" placeholder="Password" required="required" autocomplete="off">
                 </div>
-                <div class="form-element">
+                <div class="form-element form-submit">
                     <button type="submit" class="form-btn ">VALIDER</button>
                 </div>   
             </form>
-            <div class="text-redirect">
-            <p> Vous n'avez pas de compte ? <a href="register.php">S'inscrire</a></p>
+            <div class="form-redirect">
+            <p> Vous n'avez pas de compte ? <br> <a href="register.php">S'inscrire</a></p>
             </div>
         </div>
 		

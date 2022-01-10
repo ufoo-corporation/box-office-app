@@ -9,7 +9,7 @@
             <title>Connexion</title>
 			
 			<link rel="stylesheet" href="./css/style.css">
-   
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
         </head>
 
         <body>
@@ -96,23 +96,23 @@
             <form action="register-traitement.php" method="post">
                 <h2 class="form-title">CONNEXION</h2>       
                 <div class="form-element">
-                    <input type="text" name="pseudo" class="form-control" placeholder="Pseudo" required="required" autocomplete="on">
+                    <input type="text" name="login" class="form-control" placeholder="Login" required="required" autocomplete="on">
                 </div>
                 <div class="form-element">
                     <input type="email" name="email" class="form-control" placeholder="Email" required="required" autocomplete="on">
                 </div>
                 <div class="form-element">
-                    <input type="password" name="password" class="form-control" placeholder="Mot de passe" required="required" autocomplete="off">
+                    <input type="password" name="password" class="form-control" placeholder="Password" required="required" autocomplete="off">
                 </div>
                 <div class="form-element">
-                <input type="password" name="password_retype" class="form-control" placeholder="Confirmation du mot de passe" required="required" autocomplete="off">
+                <input type="password" name="password_retype" class="form-control" placeholder="Confirmation Password" required="required" autocomplete="off">
                 </div>
-                <div class="form-element">
+                <div class="form-element form-submit">
                     <button type="submit" class="form-btn ">VALIDER</button>
                 </div>   
             </form>
-            <div class="text-redirect">
-            <p> Vous avez déja un compte ? <a href="login.php">Se connecter</a></p>
+            <div class="form-redirect">
+            <p> Vous avez déja un compte ? <br> <a href="login.php">Se connecter</a></p>
             </div>
         </div>
 		

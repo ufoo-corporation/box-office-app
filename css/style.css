@@ -118,7 +118,12 @@
 	  top: 10px;
 	}
 
+@media screen and (max-width: 400px) {
+		.wrapper .logo a{
+			font-size:medium;
+		}
 
+}
 
 @media screen and (max-width: 1040px) {
 	  .wrapper .btn{
@@ -382,13 +387,13 @@
 	padding:70px;
 }
 
-.login-content{
+.register-content{
 	background: #404d97;
 	margin-top:60px;
-	height:400px;
+	height:450px;
 	display:flex;
 	justify-content: center;
-	padding:70px;
+	padding:50px;
 }
 
 .form-title{
@@ -396,7 +401,15 @@ text-align:center;
 }
 
 .login-form{
-	width:30%;
+	width:350px;
+	background:#bf4914 ;
+	color:white;
+	border:solid rgba(0, 0, 0, 0.3);
+	box-shadow: 2px 5px 5px 5px rgba(0, 0, 0, 0.3);
+	
+}
+.register-form{
+	width:400px;
 	background:#bf4914 ;
 	color:white;
 	border:solid rgba(0, 0, 0, 0.3);
@@ -408,14 +421,15 @@ text-align:center;
 	padding:10px;
 }
 
+.form-submit{
+	display:flex;
+	justify-content: center;
+}
 .form-btn{
-	text-align:center;
-	margin-right:80px;
+	text-align:center;	
 	color:#bf4914 ;
 	width:120px;
 	height:30px;
-	float:right;
-	
 }
 
 .form-btn:hover{
@@ -425,8 +439,12 @@ text-align:center;
 	border:solid ;
 }
 .form-redirect{
-	margin-top:50px;
+	margin-top:10px;
 	border-top:solid white;
 	text-align:center;
 	
+}
+
+.form-redirect p{
+	padding:5px;
 }
