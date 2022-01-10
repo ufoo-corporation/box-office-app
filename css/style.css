@@ -29,6 +29,7 @@
 	  font-size: 30px;
 	  font-weight: 600;
 	  text-decoration: none;
+	  font-family: 'Montserrat', sans-serif;
 	}
 	.wrapper .logo img{
 		width:30px;
@@ -210,19 +211,34 @@
     display:flex;
     flex-direction: column;
     margin-top:70px;
+	color:white;
+}
+
+.main-presentation{
+	background-color:#404d97;
+	height:180px;
+}
+
+.main-text{
+	margin:20px;
+	padding:10px;
+	text-align:center;
 }
 
 .main-tournoi{
-    height:250px;
+    height:200px;
     color:white;
     
     display:flex;
     justify-content: space-around;
+	flex-flow: row wrap;
     align-items:center;
+	border:solid 1px #404d97;
+
 }
 #tournoi-simple{
     
-    background-color:#404d97;
+    background-color:#bf4914 ;
 }
 
 #tournoi-double{
@@ -273,13 +289,13 @@
 }
 
 #tournoi-simple .tournament-link button{
-    border: 2px double #bf4914;
+    border: 2px double #404d97;
     background: white;
-    color: #bf4914;
+    color: #404d97;
 }
 
 #tournoi-simple .tournament-link button:after{
-    background: #bf4914;
+    background: #404d97;
 }
 #tournoi-simple .tournament-link button:hover{
     color:white;
@@ -313,11 +329,13 @@
   font-size:15px;
   line-height:24px;
   color:#737373;
+  
 }
 
 .footer-top{
     display:flex;
     justify-content: flex-start;
+	flex-flow: row wrap;
     border-bottom:solid #737373;
     gap:40px;
 
@@ -334,6 +352,14 @@
 .footer-links{
     margin:10px; 
 }
+.footer-links a{
+	text-decoration: none;
+	color:#737373;
+}
+
+.footer-links a:hover{
+	color:rgb(184, 181, 181);
+}
 
 .footer-links ul{
     list-style: none;
@@ -341,4 +367,66 @@
 
 .footer-bottom{
     padding:10px;
+}
+
+
+
+
+
+.login-content{
+	background: #404d97;
+	margin-top:60px;
+	height:400px;
+	display:flex;
+	justify-content: center;
+	padding:70px;
+}
+
+.login-content{
+	background: #404d97;
+	margin-top:60px;
+	height:400px;
+	display:flex;
+	justify-content: center;
+	padding:70px;
+}
+
+.form-title{
+text-align:center;
+}
+
+.login-form{
+	width:30%;
+	background:#bf4914 ;
+	color:white;
+	border:solid rgba(0, 0, 0, 0.3);
+	box-shadow: 2px 5px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+
+.form-element{
+	padding:10px;
+}
+
+.form-btn{
+	text-align:center;
+	margin-right:80px;
+	color:#bf4914 ;
+	width:120px;
+	height:30px;
+	float:right;
+	
+}
+
+.form-btn:hover{
+	background:#bf4914;
+	color:white;
+	cursor:pointer;
+	border:solid ;
+}
+.form-redirect{
+	margin-top:50px;
+	border-top:solid white;
+	text-align:center;
+	
 }

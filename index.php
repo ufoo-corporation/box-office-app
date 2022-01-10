@@ -25,7 +25,7 @@
         <li class="hidden-space">hola<li>
 
 	   <li>
-          <a href="landing.php" class="desktop-item">Espace Perso</a>
+          <a href="mon_espace.php" class="desktop-item">Espace Perso</a>
           <input type="checkbox" id="showDrop">
           <label for="showDrop" class="mobile-item">Espace Perso</label>
           <ul class="drop-menu">
@@ -42,8 +42,10 @@
 
 <div class="main-content">
     <div class="main-presentation">
+      <div class="main-text">
        <h1> Bienvenue sur la Billeterie de l'ATP de Lyon ! </h1>
-       <h2> Rendez-vous au parc de la tête d'or pour la 5e édition de l'open parc du 15 au 21 mai 2022</h2> 
+       <h2> Rendez-vous au parc de la tête d'or pour la 5e édition de l'open parc du 15 au 21 mai 2022</h2>
+      </div> 
     </div>
     <div id="tournoi-simple" class="main-tournoi">
         <h1> TOURNOI SIMPLE</h1>
@@ -65,18 +67,16 @@
     <div class="footer-top">
         <div class="footer-about">
             <h3> A PROPOS </h3>
-            <p> of type and scrambled it to make a type specimen book.
-            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-            and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            <p> Le tournoi de tennis de Lyon est un tournoi international de tennis masculin et féminin des circuits professionnels de l'ATP World Tour et de la WTA. Organisé par Sport Plus Conseil, le tournoi regroupe 28 joueurs et joueuse en simple et 16 équipe en binôme.
             </p>
         </div>
 
         <div class="footer-links">
             <h3> LIENS UTILES </h3>
             <ul>
-                <li> Site atp lyon </li>
-                <li> numero </li>
-                <li> adresse mail </li>
+                <li><a href="https://openparc.com/" target="_blank"> Site web </a></li>
+                <li><a href="https://twitter.com/OpenParcARA" target="_blank"> Twitter </a></li>
+                <li><a href="https://www.facebook.com/openparcauvergnerhonealpes/" target="_blank"> Facebook </a></li>
             <ul>
         </div>
     </div>
