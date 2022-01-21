@@ -8,9 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class AccueilController extends AbstractController
 {
-   /**
-   * @Route("/accueil")
-   */
+    #[Route('/', name: 'accueil')]
 
     public function accueil(): Response
     {
@@ -18,18 +16,6 @@ class AccueilController extends AbstractController
 
         return $this->render('accueil/accueil.html.twig', [
             ///'number' => $number,
-        ]);
-    }
-
-    /**
-   * @Route("/accueil/test")
-   */
-
-    public function test(): Response
-    {
-
-        return $this->render('accueil/test.html.twig', [
-            
         ]);
     }
 }

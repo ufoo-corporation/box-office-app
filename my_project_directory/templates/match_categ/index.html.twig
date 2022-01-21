@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello MatchCategController!{% endblock %}
+
+{% block body %}
+
+
+
+  <div class="main-content">
+        <div class="match-top">
+
+            <div class="match-info">
+               <header> <h2 class="match-title"> Match <?php /* echo getidmatch()." - ".gettour()." - ".getnomjoueur1()." vs ".getnomjoueur2()*/ ?> </h2> </header>
+            
+
+            
+                <img class="image-stade" src="./asset/open-stade.png" alt="image 3D du stade">
+            </div>
+
+        </div>
+
+        <div class="match-bottom">
+            <div class="categorie loge">
+                    <header> Loges </header>
+                    <h3> <?php /* getnbplaceRestante() */?> places restantes </h3>
+                    <button class="slide" onclick="window.location.href = 'match-billets.php?cat=loge';">ACCES >></button>
+                     <!--- Rediriger vers le billet correspondant au match-->
+            </div>
+
+            <div class="categorie cat1">
+                    <header> Catégorie 1 </header>
+                    <h3> <?php /* getnbplaceRestante() */?> places restantes </h3>
+                    <button class="slide" onclick="window.location.href = 'match-billets.php?cat=1';">ACCES >></button>
+                    <!--- Rediriger vers le billet correspondant au match-->
+            </div>
+
+            <div class="categorie cat2">
+                    <header> Catégorie 2 </header>
+                    <h3> <?php /* getnbplaceRestante() */?> places restantes </h3>
+                    <button class="slide" onclick="window.location.href = 'match-billets.php?cat=2';">ACCES >></button>
+                     <!--- Rediriger vers le billet correspondant au match-->
+            </div>
+
+
+
+        </div>
+
+
+  </div>
+
+
+{% endblock %}
