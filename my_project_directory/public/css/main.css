@@ -426,7 +426,8 @@ padding:10px;
 	color:white;
 	border:solid rgba(0, 0, 0, 0.3);
 	box-shadow: 2px 5px 5px 5px rgba(0, 0, 0, 0.3);
-	margin:auto;
+	margin:50px auto auto auto;
+	text-align:center;
 	padding:30px;
 	
 	
@@ -438,8 +439,9 @@ padding:10px;
 	color:white;
 	border:solid rgba(0, 0, 0, 0.3);
 	box-shadow: 2px 5px 5px 5px rgba(0, 0, 0, 0.3);
-	margin:auto;
+	margin:50px auto auto auto;
 	padding:30px;
+	text-align:center;
 
 }
 
@@ -497,7 +499,11 @@ padding:10px;
 
 .match-info img{
 padding:10px;
-height:80%;
+max-height:80%;
+max-width:100%;
+height:auto;
+width:auto;
+
 
 
 }
@@ -639,7 +645,7 @@ div.cat2{
 	justify-content: center;
 	margin-top:70px;
 	color:white;
-	height:calc(100% - (70px - 230px));
+	min-height:calc(100% - (70px - 230px));
 	background: #404d97;
 
 
@@ -648,9 +654,10 @@ div.cat2{
 .billets-form-content{
 
 	background: #bf4914 ;
-margin-bottom:auto;
-margin-top:10px;
+	margin-bottom:auto;
+	margin-top:10px;
 	border: solid white;
+	max-width:480px;
 
 
 
@@ -673,9 +680,7 @@ margin-top:10px;
 
 	
 }
-.billets-image{
-	border-right:solid white;
-}
+
 
 .billets-select{
 	height:30px;
@@ -793,10 +798,7 @@ justify-content: flex-start;
 	color:white;
 }
 
-.liste-match-element{
-	background: #bf4914 ;
-	border:solid white;
-}
+
 
 
 .filtre-match-button button {
@@ -853,6 +855,47 @@ justify-content: flex-start;
     top: 2px;
 }
 
+.liste-match-element{
+	width:80%;
+	margin-left: auto;
+	margin-right: auto;
+	
+	background:#bf4914 ;
+	border:solid white;
+	display:flex;
+
+	flex-flow: row wrap;
+	
+}
+
+.liste-match-element-left{
+	border-right:solid white;
+	width:80%;
+}
+
+.liste-match-element-infos{
+	display: inline-flex;
+	font-size: small;
+	
+	flex-flow: row wrap;
+	width:100%;
+	justify-content: space-around;
+	padding:10px;
+}
+
+.liste-match-element-right {
+	width:20%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+.liste-match-element-left h1{
+	border-bottom: solid white 1px;
+	text-align:center;
+	padding:8px;
+}
 
 
 
@@ -945,7 +988,7 @@ justify-content: flex-start;
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
-	gap:20px;
+	gap:25px;
 	margin-bottom: 20px;
 }
 
@@ -962,15 +1005,14 @@ justify-content: flex-start;
 .mes-achats-element-infos{
 	display: inline-flex;
 	font-size: small;
-	gap:20px;
+	gap:30px;
 	flex-flow: row wrap;
+	justify-content: center;
+	width:100%;
+	padding:12px;
 }
 
-.mes-achats-element h2{
-	padding:5px;
 
-	
-}
 
 .mes-achats-element h1{
 	border-bottom: solid white 1px;
