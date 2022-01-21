@@ -1,0 +1,705 @@
+html, body{
+	height:100%;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+	*{
+	  margin: 0;
+	  padding: 0;
+	  box-sizing: border-box;
+	  font-family: 'Poppins', sans-serif;
+	}
+	nav{
+	  position: fixed;
+	  z-index: 99;
+	  width: 100%;
+	  top:0%;
+	  background: #bf4914;
+	}
+	nav .wrapper{
+	  position: relative;
+	  max-width: 1300px;
+	  padding: 0px 30px;
+	  height: 70px;
+	  line-height: 70px;
+	  margin: auto;
+	  display: flex;
+	  align-items: center;
+	  justify-content: space-between;
+	  background-color:#bf4914;
+	}
+	.wrapper .logo a{
+	  color: #f2f2f2;
+	  font-size: 30px;
+	  font-weight: 600;
+	  text-decoration: none;
+	  font-family: 'Montserrat', sans-serif;
+	}
+	.wrapper .logo img{
+		width:30px;
+	}
+
+    .hidden-space{
+        visibility: hidden;
+    }
+
+	.wrapper .nav-links{
+	  display: inline-flex;
+	}
+	.nav-links li{
+	  list-style: none;
+	}
+	.nav-links li a{
+	  color: #f2f2f2;
+	  text-decoration: none;
+	  font-size: 18px;
+	  font-weight: 500;
+	  padding: 9px 15px;
+	  border-radius: 5px;
+	  transition: all 0.3s ease;
+	}
+	.nav-links li a:hover{
+
+	  color:#bf4914;
+	  background-color:white;
+	}
+	.nav-links .mobile-item{
+	  display: none;
+	}
+	.nav-links .drop-menu{
+	  position: absolute;
+	  background: white;
+	  width: 180px;
+	  line-height: 45px;
+	  top: 85px;
+	  opacity: 0;
+	  visibility: hidden;
+	  box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+	}
+	.nav-links li:hover .drop-menu
+	{
+	  transition: all 0.3s ease;
+	  top: 70px;
+	  opacity: 1;
+	  visibility: visible;
+	  background-color:white;
+	  border:solid;
+	  border-color:#bf4914;
+
+	}
+
+	
+		
+	.drop-menu li a{
+	  width: 100%;
+	  display: block;
+	  padding: 0 0 0 15px;
+	  font-weight: 400;
+	  border-radius: 0px;
+	  color:#bf4914;
+	}
+	
+	.content .row img{
+	  width:100%;
+	  height: 80%;
+	  object-fit: cover;
+	}
+	.content .row header{
+	  color: #bf4914;
+	  font-size: 20px;
+	  font-weight: 500;
+	}
+	
+	.wrapper .btn{
+	  color: #fff;
+	  font-size: 20px;
+	  cursor: pointer;
+	  display: none;
+	}
+	.wrapper .btn.close-btn{
+	  position: absolute;
+	  right: 30px;
+	  top: 10px;
+	}
+
+@media screen and (max-width: 400px) {
+		.wrapper .logo a{
+			font-size:medium;
+		}
+
+}
+
+@media screen and (max-width: 1040px) {
+	  .wrapper .btn{
+		display: block;
+		
+	  }
+	  .wrapper .nav-links{
+		position: fixed;
+		height: 100vh;
+		width: 100%;
+		max-width: 350px;
+		top: 0;
+		left: -100%;
+		background: #bf4914;
+		display: block;
+		padding: 50px 10px;
+		line-height: 50px;
+		overflow-y: auto;
+		box-shadow: 0px 15px 15px rgba(0,0,0,0.18);
+		transition: all 0.3s ease;
+	  }
+	
+	  #menu-btn:checked ~ .nav-links{
+		left: 0%;
+	  }
+	  #menu-btn:checked ~ .btn.menu-btn{
+		display: block;
+	  }
+	  #close-btn:checked ~ .btn.menu-btn{
+		display: block;
+	  }
+	  .nav-links li{
+		margin: 15px 10px;
+	  }
+	  .nav-links li a{
+		padding: 0 20px;
+		display: block;
+		font-size: 20px;
+	  }
+	  .nav-links .drop-menu{
+		position: static;
+		opacity: 1;
+		top: 65px;
+		visibility: visible;
+		padding-left: 20px;
+		width: 100%;
+		max-height: 0px;
+		overflow: hidden;
+		box-shadow: none;
+		transition: all 0.3s ease;
+	  }
+	  #showDrop:checked ~ .drop-menu
+	  {
+		max-height: 100%;
+	  }
+	  .nav-links .desktop-item{
+		display: none;
+	  }
+	  .nav-links .mobile-item{
+		display: block;
+		color: #f2f2f2;
+		font-size: 20px;
+		font-weight: 500;
+		padding-left: 20px;
+		cursor: pointer;
+		border-radius: 5px;
+		transition: all 0.3s ease;
+	  }
+	  .nav-links .mobile-item:hover{
+		background: white;
+		color:#bf4914;
+	  }
+	  .drop-menu li{
+		margin: 0;
+	  }
+	  .drop-menu li a{
+		border-radius: 5px;
+		font-size: 18px;
+	  }
+	  
+	}
+	nav input{
+	  display: none;
+	}
+	
+/*--------------------------fin navBar ---------------------------------------------------*/
+
+
+/*--------------------------DEBUT INDEX ---------------------------------------------------*/
+.main-content{
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    margin-top:60px;
+	color:white;
+	height:calc(100% - (70px - 230px));
+}
+
+.main-presentation{
+	background-color:#404d97;
+
+	height:calc(100% - (70px - 230px)/3)
+}
+
+.presentation-text{
+	margin:20px;
+	padding:50px;
+	text-align:center;
+	
+}
+
+.main-tournoi{
+   
+    color:white;
+    
+    display:flex;
+    justify-content: space-around;
+	flex-flow: row wrap;
+    align-items:center;
+	border:solid 1px #404d97;
+	height:calc(100% - (70px - 230px)/3);
+
+
+}
+#tournoi-simple{
+    
+    background-color:#bf4914 ;
+}
+
+#tournoi-double{
+    background-color:#bf4914 ;
+}
+ 
+
+
+
+.slide:hover,
+.slide:focus {
+    box-shadow: inset 6.5em 0 0 0 var(--hover);
+}
+
+
+.tournament-link button {
+    margin: 20px;
+    outline: none;
+
+    width: 130px;
+    height: 50px;
+    padding: 10px 25px;
+
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+
+
+    z-index: 1;
+    float:right;
+}
+
+#tournoi-double .tournament-link button{
+    border: 2px double #404d97;
+    background: white;
+    color: #404d97;
+}
+
+#tournoi-double .tournament-link button:after{
+    background: #404d97;
+}
+#tournoi-double .tournament-link button:hover{
+    color:white;
+}
+
+#tournoi-simple .tournament-link button{
+    border: 2px double #404d97;
+    background: white;
+    color: #404d97;
+}
+
+#tournoi-simple .tournament-link button:after{
+    background: #404d97;
+}
+#tournoi-simple .tournament-link button:hover{
+    color:white;
+}
+
+.tournament-link button:after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    
+    transition: all 0.3s ease;
+}
+
+.tournament-link button:hover:after {
+    left: 0;
+    width: 100%;
+}
+.tournament-link button:active {
+    top: 2px;
+}
+
+
+
+.footer{
+width:100%;
+  background-color:#26272b;
+  padding:20px;
+  font-size:15px;
+  line-height:24px;
+  color:#737373;
+
+  bottom:0%;
+  
+}
+
+.footer-top{
+    display:flex;
+    justify-content: flex-start;
+	flex-flow: row wrap;
+    border-bottom:solid #737373;
+    gap:40px;
+
+}
+.footer-top{
+    padding:10px;
+}
+
+.footer-about{
+    width:70%;
+   
+}
+
+.footer-links{
+    margin:10px; 
+}
+.footer-links a{
+	text-decoration: none;
+	color:#737373;
+}
+
+.footer-links a:hover{
+	color:rgb(184, 181, 181);
+}
+
+.footer-links ul{
+    list-style: none;
+}
+
+.footer-bottom{
+    padding:10px;
+}
+
+
+/*--------------------------fin INDEX ---------------------------------------------------*/
+
+
+/*--------------------------DEBUT LOGIN / REGISTER ---------------------------------------------------*/
+.login-content{
+    width:100%;
+    display:flex;
+	justify-content: center;
+    margin-top:60px;
+	color:white;
+	height:calc(100% - (70px - 230px));
+	background: #404d97;
+}
+
+.register-content{
+	width:100%;
+    display:flex;
+	justify-content: center;
+    margin-top:60px;
+	color:white;
+	height:calc(100% - (70px - 230px));
+	background: #404d97;
+}
+
+.form-title{
+text-align:center;
+padding:10px;
+}
+
+.login-form{
+	width:350px;
+	background:#bf4914 ;
+	color:white;
+	border:solid rgba(0, 0, 0, 0.3);
+	box-shadow: 2px 5px 5px 5px rgba(0, 0, 0, 0.3);
+	margin:auto;
+	
+	
+}
+.register-form{
+	width:400px;
+	background:#bf4914 ;
+	color:white;
+	border:solid rgba(0, 0, 0, 0.3);
+	box-shadow: 2px 5px 5px 5px rgba(0, 0, 0, 0.3);
+	margin:auto;
+
+}
+
+
+.form-element{
+	padding:10px;
+}
+
+.form-submit{
+	display:flex;
+	justify-content: center;
+}
+.form-btn{
+	text-align:center;	
+	color:#bf4914 ;
+	width:120px;
+	height:30px;
+}
+
+.form-btn:hover{
+	background:#bf4914;
+	color:white;
+	cursor:pointer;
+	border:solid ;
+}
+.form-redirect{
+	margin-top:10px;
+	border-top:solid white;
+	text-align:center;
+	
+}
+
+.form-redirect p{
+	padding:5px;
+}
+
+/*--------------------------FIN LOGIN / REGISTER ---------------------------------------------------*/
+
+/*--------------------------DEBUT CHOIX CATEGORIE ---------------------------------------------------*/
+
+.match-title{
+	padding:20px;
+	border-bottom:solid white;
+}
+
+.match-top{
+	display:flex;
+	justify-content: center;
+	width:100%;
+	background-color:#404d97;
+	height:calc((100% + 20px)/ 2);
+
+}
+
+
+.match-info img{
+padding:10px;
+height:80%;
+
+
+}
+
+.match-info{
+	text-align: center;
+	width:70%;
+}
+
+
+.match-bottom{
+	display:flex;
+	width:100%;
+	justify-content: space-around;
+	
+	flex-flow: row wrap;
+	background-color:#404d97;
+	height:calc(100% / 2);
+}
+
+div.categorie{
+
+	border:solid white;
+	text-align: center;
+	padding:20px;
+	margin:auto;
+}
+
+div.categorie header{
+	padding:10px;
+
+}
+
+div.categorie p{
+	padding:10px;
+}
+
+
+div.loge {
+	background-color: #404d97;
+}
+
+div.cat1{
+	background-color: #bf4914 ;
+}
+
+div.cat2{
+	background-color: grey ;
+}
+
+.categorie button {
+
+    outline: none;
+
+	height:140%;
+	padding:5px;
+	margin:10px;
+
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+
+
+    z-index: 1;
+    
+}
+
+.loge button{
+    border: 1px solid white;
+    background: white;
+    color: #404d97;
+}
+
+.cat1 button{
+    border: 1px solid white;
+    background: white;
+    color: #bf4914 ;
+}
+
+.cat1 button{
+    border: 1px solid white;
+    background: white;
+    color: #bf4914 ;
+}
+
+.cat2 button{
+    border: 1px solid white;
+    background: white;
+    color: grey ;
+}
+
+.loge button:after{
+    background: #404d97;
+}
+
+.cat1 button:after{
+    background: #bf4914 ;
+}
+.cat2 button:after{
+    background: grey ;
+}
+.categorie button:hover{
+    color:white;
+}
+
+.categorie button:after {
+    position: absolute;
+    content: "";
+    width: 0;
+	height:100%;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    
+    transition: all 0.3s ease;
+}
+
+.categorie button:hover:after {
+    left: 0;
+    width: 100%;
+}
+.categorie button:active {
+    top: 2px;
+}
+
+
+
+/*--------------------------FIN CHOIX CATEGORIES ---------------------------------------------------*/
+
+/*--------------------------DEBUT CHOIX BILLETS ---------------------------------------------------*/
+
+.billets-page-content{
+	width:100%;
+    display:flex;
+	justify-content: center;
+	margin-top:70px;
+	color:white;
+	height:calc(100% - (70px - 230px));
+	background: #404d97;
+
+
+}
+
+.billets-form-content{
+
+	background: #bf4914 ;
+	margin:auto;
+	border: solid white;
+
+
+}
+
+.billets-top{
+	display:flex;
+	justify-content: flex-start;
+	gap:60px;
+	align-items: center;
+	flex-flow: row wrap;
+	border-bottom: solid white;
+}
+.billets-bottom{
+	display:flex;
+	flex-direction: column;
+	flex-flow: row wrap;
+	justify-content: center;
+	font-size: xx-large;
+	
+}
+.billets-image{
+	border-right:solid white;
+}
+
+.billets-select{
+	height:30px;
+
+}
+.billets-bottom .billets-form-element{
+	padding:30px;
+}
+
+.billets-submit{
+	font-size: x-large;
+	height:10%;
+	width:60%;
+	color:#404d97;
+	border-color: #404d97;
+	cursor:pointer;
+}
+
+.billets-submit:hover{
+	background:#404d97;
+	color:white;
+	border-color:white;
+	
+}
+
+.billets-top header{
+	font-size: xx-large;
+
+}
+
+
+
+
+
+/*--------------------------FIN CHOIX BILLETS ---------------------------------------------------*/

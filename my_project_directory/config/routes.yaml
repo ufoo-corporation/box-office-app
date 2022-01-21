@@ -1,0 +1,27 @@
+controllers:
+    resource: ../src/Controller/
+    type: annotation
+
+kernel:
+    resource: ../src/Kernel.php
+    type: annotation
+
+app_accueil:
+    path: /accueil
+    controller: App\Controller\AccueilController
+
+app_accueil_test:
+    path: /lucky/test
+    controller: App\Controller\AccueilController::test
+
+app_connexion:
+    path: /connexion
+    controller: App\Controller\ConnexionController
+
+app_mon_espace:
+    path: /mon_espace
+    controller: App\Controller\MonEspaceController
+
+app_choix_options:
+    path: /choix_options
+    controller: App\Controller\ChoixOptionsController
