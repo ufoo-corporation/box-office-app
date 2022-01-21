@@ -8,9 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ChoixOptionsController extends AbstractController
 {
-    /**
-   * @Route("/choix_options")
-   */
+    #[Route('/choix-options', name: 'choix_options')]
     public function choix_options(): Response
     {
         return $this->render('choix_options/choix_options.html.twig', [

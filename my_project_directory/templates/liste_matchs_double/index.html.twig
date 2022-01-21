@@ -1,0 +1,90 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}MATCHS DOUBLE{% endblock %}
+
+{% block body %}
+
+  <div class="choix-match-content">
+    <div class="choix-match-left">
+
+        <form action="match-double-traitement.php" method="post" class="filtre-matchs">
+
+            <div class="filtre-match-element">
+                <select name="joueur" id="select-joueur" class="match-select"> <!-- remplir choix avec ceux de la BD -->
+                    <option value="">Choisir Equipe</option>
+                    <option value="2">2</option>
+                    <option value="2">3</option>
+                    <option value="4">4</option>           
+                </select>
+            </div>
+
+            <div class="filtre-match-element">
+
+                <select name="date" id="select-date" class="match-select"> <!-- remplir choix avec ceux de la BD -->
+                    <option value="">Choisir un jour</option>
+                    <option value="2">2</option>
+                    <option value="2">3</option>
+                    <option value="4">4</option>          
+                </select>
+            </div>
+
+            <div class="filtre-match-element">
+                <select name="tour" id="select-tour" class="match-select"> <!-- Pas besoin ici ??? -->
+                    <option value="">Choisir un tour</option>
+                    <option value="Q">Qualification</option>
+                    <option value="1tour">1er tour</option>
+                    <option value="1/8">1/8E de finale</option>
+                    <option value="1/4">1/4 de finale</option>  
+                    <option value="1/2">DEMI-FINALE</option> 
+                    <option value="F">FINALE</option>      
+                </select>
+            </div>
+
+            <div class="filtre-match-button filtre-match-element">
+                <button type="submit" class="slide" onclick="window.location.href = 'match-categ.php';">FILTRER</button>
+            </div>
+
+        </form>
+    </div>
+
+    <div class="choix-match-right">
+        <div class="choix-match-title">
+            <h2> Liste des matchs du tournoi Double </h2>
+        </div>
+
+        <div class="choix-match-liste"> 
+
+            <!-- foreach de tout les matchs simple de la BD -->
+
+            <a href="{{ path("match_categ") }}"><!-- Lien à relier au match choisis-->
+                <div class="liste-match-element">
+                    <header>Joueur 1/Joueur 2 vs Joueur3/joueur4 <header> <!---afficher informations à partir de la BD -->
+                    <h2> A tel date </h2>
+                    <h2> Tour </h2>
+                </div>
+            </a>
+
+           <a href="{{ path("match_categ") }}"><!-- Lien à relier au match choisis-->
+                <div class="liste-match-element">
+                    <header>Joueur 1/Joueur 2 vs Joueur3/joueur4 <header> <!---afficher informations à partir de la BD -->
+                    <h2> A tel date </h2>
+                    <h2> Tour </h2>
+                </div>
+            </a>
+
+            
+            <a href="{{ path("match_categ") }}"><!-- Lien à relier au match choisis-->
+                <div class="liste-match-element">
+                    <header>Joueur 1/Joueur 2 vs Joueur3/joueur4 <header> <!---afficher informations à partir de la BD -->
+                    <h2> A tel date </h2>
+                    <h2> Tour </h2>
+                </div>
+            </a>
+
+             
+        </div>
+    </div>
+  </div>
+
+
+{% endblock %}
