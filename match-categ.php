@@ -1,9 +1,12 @@
+
+
+
 <!doctype html>
 
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Acceuil</title>
+<title>Choix catégories</title>
 
 <link rel="stylesheet" href="./css/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
@@ -22,7 +25,6 @@
         <li><a href="liste-matchs-simple.php">Simple</a></li>
 	   
         <li><a href="liste-matchs-double.php">Double</a></li>
-
         <li class="hidden-space">hola<li>
 
 	   <li>
@@ -40,31 +42,49 @@
     </div>
   </nav>
 
+  <div class="main-content">
+        <div class="match-top">
 
-<div class="main-content">
-    <div class="main-presentation">
-      <div class="presentation-text">
-       <h1> Bienvenue sur la Billeterie de l'Open Parc Auverge-Rhône Alpes ! </h1>
-       <h2> Rendez-vous au parc de la tête d'or pour la 5e édition de l'open parc du 15 au 21 mai 2022</h2>
-      </div> 
-    </div>
-    <div id="tournoi-simple" class="main-tournoi">
-        <h1> TOURNOI SIMPLE</h1>
-        
-        <div class="tournament-link">
-                <button class="slide" onclick="window.location.href = 'liste-matchs-simple.php';">ACCES >></button>
-        </div>
-    </div>
-    <div id="tournoi-double" class="main-tournoi">
-        <h1> TOURNOI DOUBLE</h1>
-        <div class="tournament-link">
-                <button class="slide" onclick="window.location.href = 'liste-matchs-double.php';">ACCES >></button>
+            <div class="match-info">
+               <header> <h2 class="match-title"> Match <?php /* echo getidmatch()." - ".gettour()." - ".getnomjoueur1()." vs ".getnomjoueur2()*/ ?> </h2> </header>
+            
+
+            
+                <img class="image-stade" src="./asset/open-stade.png" alt="image 3D du stade">
+            </div>
+
         </div>
 
-    </div>
+        <div class="match-bottom">
+            <div class="categorie loge">
+                    <header> Loges </header>
+                    <h3> <?php /* getnbplaceRestante() */?> places restantes </h3>
+                    <button class="slide" onclick="window.location.href = 'match-billets.php?cat=loge';">ACCES >></button>
+                     <!--- Rediriger vers le billet correspondant au match--->
+            </div>
 
-</div>
-<footer class="footer">
+            <div class="categorie cat1">
+                    <header> Catégorie 1 </header>
+                    <h3> <?php /* getnbplaceRestante() */?> places restantes </h3>
+                    <button class="slide" onclick="window.location.href = 'match-billets.php?cat=1';">ACCES >></button>
+                    <!--- Rediriger vers le billet correspondant au match--->
+            </div>
+
+            <div class="categorie cat2">
+                    <header> Catégorie 2 </header>
+                    <h3> <?php /* getnbplaceRestante() */?> places restantes </h3>
+                    <button class="slide" onclick="window.location.href = 'match-billets.php?cat=2';">ACCES >></button>
+                     <!--- Rediriger vers le billet correspondant au match--->
+            </div>
+
+
+
+        </div>
+
+
+  </div>
+
+  <footer class="footer">
     <div class="footer-top">
         <div class="footer-about">
             <h3> A PROPOS </h3>
@@ -89,5 +109,3 @@
 
 </body>
 </html>
-
-  

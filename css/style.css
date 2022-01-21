@@ -1,3 +1,7 @@
+html, body{
+	height:100%;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 	*{
 	  margin: 0;
@@ -211,27 +215,33 @@
 	
 /*--------------------------fin navBar ---------------------------------------------------*/
 
+
+/*--------------------------DEBUT INDEX ---------------------------------------------------*/
 .main-content{
     width:100%;
     display:flex;
     flex-direction: column;
-    margin-top:70px;
+    margin-top:60px;
 	color:white;
+	height:calc(100% - (70px - 230px));
+	background: #404d97;
 }
 
 .main-presentation{
 	background-color:#404d97;
-	height:180px;
+
+	height:calc(100% - (70px - 230px)/3)
 }
 
-.main-text{
+.presentation-text{
 	margin:20px;
-	padding:10px;
+	padding:50px;
 	text-align:center;
+	
 }
 
 .main-tournoi{
-    height:200px;
+   
     color:white;
     
     display:flex;
@@ -239,6 +249,8 @@
 	flex-flow: row wrap;
     align-items:center;
 	border:solid 1px #404d97;
+	height:calc(100% - (70px - 230px)/3);
+
 
 }
 #tournoi-simple{
@@ -327,13 +339,16 @@
 }
 
 
-.footer{
 
+.footer{
+width:100%;
   background-color:#26272b;
   padding:20px;
   font-size:15px;
   line-height:24px;
   color:#737373;
+
+  bottom:0%;
   
 }
 
@@ -375,45 +390,57 @@
 }
 
 
+/*--------------------------fin INDEX ---------------------------------------------------*/
 
 
-
+/*--------------------------DEBUT LOGIN / REGISTER ---------------------------------------------------*/
 .login-content{
-	background: #404d97;
-	margin-top:60px;
-	height:400px;
-	display:flex;
+    width:100%;
+    display:flex;
 	justify-content: center;
-	padding:70px;
+    margin-top:60px;
+	color:white;
+	height:calc(100% - (70px - 230px));
+	background: #404d97;
+	font-size: larger;
 }
 
 .register-content{
-	background: #404d97;
-	margin-top:60px;
-	height:450px;
-	display:flex;
+	width:100%;
+    display:flex;
 	justify-content: center;
-	padding:50px;
+    margin-top:60px;
+	color:white;
+	height:calc(100% - (70px - 230px));
+	background: #404d97;
 }
 
 .form-title{
 text-align:center;
+padding:10px;
 }
 
 .login-form{
-	width:350px;
-	background:#bf4914 ;
-	color:white;
-	border:solid rgba(0, 0, 0, 0.3);
-	box-shadow: 2px 5px 5px 5px rgba(0, 0, 0, 0.3);
-	
-}
-.register-form{
 	width:400px;
 	background:#bf4914 ;
 	color:white;
 	border:solid rgba(0, 0, 0, 0.3);
 	box-shadow: 2px 5px 5px 5px rgba(0, 0, 0, 0.3);
+	margin:auto;
+	padding:30px;
+	
+	
+	
+}
+.register-form{
+	width:	470px;
+	background:#bf4914 ;
+	color:white;
+	border:solid rgba(0, 0, 0, 0.3);
+	box-shadow: 2px 5px 5px 5px rgba(0, 0, 0, 0.3);
+	margin:auto;
+	padding:30px;
+
 }
 
 
@@ -448,3 +475,385 @@ text-align:center;
 .form-redirect p{
 	padding:5px;
 }
+
+/*--------------------------FIN LOGIN / REGISTER ---------------------------------------------------*/
+
+/*--------------------------DEBUT CHOIX CATEGORIE ---------------------------------------------------*/
+
+.match-title{
+	padding:20px;
+	border-bottom:solid white;
+}
+
+.match-top{
+	display:flex;
+	justify-content: center;
+	width:100%;
+	background-color:#404d97;
+	height:calc((100% + 20px)/ 2);
+
+}
+
+
+.match-info img{
+padding:10px;
+height:80%;
+
+
+}
+
+.match-info{
+	text-align: center;
+	width:70%;
+}
+
+
+.match-bottom{
+	display:flex;
+	width:100%;
+	justify-content: space-around;
+	
+	flex-flow: row wrap;
+	background-color:#404d97;
+	height:calc(100% / 2);
+}
+
+div.categorie{
+
+	border:solid white;
+	text-align: center;
+	padding:20px;
+	margin:auto;
+}
+
+div.categorie header{
+	padding:10px;
+
+}
+
+div.categorie p{
+	padding:10px;
+}
+
+
+div.loge {
+	background-color: #404d97;
+}
+
+div.cat1{
+	background-color: #bf4914 ;
+}
+
+div.cat2{
+	background-color: grey ;
+}
+
+.categorie button {
+
+    outline: none;
+
+	height:140%;
+	padding:5px;
+	margin:10px;
+
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+
+
+    z-index: 1;
+    
+}
+
+.loge button{
+    border: 1px solid white;
+    background: white;
+    color: #404d97;
+}
+
+.cat1 button{
+    border: 1px solid white;
+    background: white;
+    color: #bf4914 ;
+}
+
+.cat1 button{
+    border: 1px solid white;
+    background: white;
+    color: #bf4914 ;
+}
+
+.cat2 button{
+    border: 1px solid white;
+    background: white;
+    color: grey ;
+}
+
+.loge button:after{
+    background: #404d97;
+}
+
+.cat1 button:after{
+    background: #bf4914 ;
+}
+.cat2 button:after{
+    background: grey ;
+}
+.categorie button:hover{
+    color:white;
+}
+
+.categorie button:after {
+    position: absolute;
+    content: "";
+    width: 0;
+	height:100%;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    
+    transition: all 0.3s ease;
+}
+
+.categorie button:hover:after {
+    left: 0;
+    width: 100%;
+}
+.categorie button:active {
+    top: 2px;
+}
+
+
+
+/*--------------------------FIN CHOIX CATEGORIES ---------------------------------------------------*/
+
+/*--------------------------DEBUT CHOIX BILLETS ---------------------------------------------------*/
+
+.billets-page-content{
+	width:100%;
+    display:flex;
+	justify-content: center;
+	margin-top:70px;
+	color:white;
+	height:calc(100% - (70px - 230px));
+	background: #404d97;
+
+
+}
+
+.billets-form-content{
+
+	background: #bf4914 ;
+margin-bottom:auto;
+margin-top:10px;
+	border: solid white;
+
+
+
+}
+
+.billets-top{
+	display:flex;
+	justify-content: flex-start;
+	gap:60px;
+	align-items: center;
+	flex-flow: row wrap;
+	border-bottom: solid white;
+}
+.billets-bottom{
+	display:flex;
+	
+	flex-flow: row wrap;
+	justify-content: center;
+	font-size: xx-large;
+
+	
+}
+.billets-image{
+	border-right:solid white;
+}
+
+.billets-select{
+	height:30px;
+
+}
+
+
+.billets-bottom .billets-form-element{
+	padding:25px;
+	display:flex;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+	gap:30px;
+}
+
+.element-borderbottom{
+	border-bottom: solid white;
+}
+
+.billets-submit{
+	font-size: x-large;
+	height:10%;
+	width:60%;
+	color:#404d97;
+	border-color: #404d97;
+	cursor:pointer;
+	
+}
+
+.billets-submit:hover{
+	background:#404d97;
+	color:white;
+	border-color:white;
+	
+}
+
+.billets-top header{
+	font-size: xx-large;
+
+}
+
+.billets-form-button {
+	display: flex;
+	justify-content: center;
+	padding:10px;
+}
+
+
+
+
+
+
+/*--------------------------FIN CHOIX BILLETS ---------------------------------------------------*/
+
+/*--------------------------DEBUT LISTES MATCHS ---------------------------------------------------*/
+
+.choix-match-content{
+	width:100%;
+    display:flex;
+justify-content: flex-start;
+
+ 
+	color:white;
+	min-height:calc(100% - (70px - 230px));
+	background: #404d97;
+}
+.choix-match-left{
+
+	background: #bf4914 ;
+	margin: auto 0;
+	display: flex;
+	flex-direction: column;
+
+	
+	border:solid white;
+	
+}
+
+.filtre-match-element{
+	padding:20px;
+}
+
+.choix-match-right{
+	
+	margin: auto 0;
+	display: flex;
+	flex-direction: column;
+ width:100%;
+	gap:100px;
+	padding:50px;
+
+	
+
+	
+	
+}
+.choix-match-title{
+	border:solid white;
+	background: #bf4914 ;
+	text-align:center;
+	font-size: x-large;
+	padding:20px;
+
+}
+
+.choix-match-liste{
+	display:flex;
+	flex-direction: column;
+	gap:50px;
+
+}
+
+.choix-match-liste a {
+	text-decoration: none;
+	color:white;
+}
+
+.liste-match-element{
+	background: #bf4914 ;
+	border:solid white;
+}
+
+
+.filtre-match-button button {
+   
+    outline: none;
+	margin-bottom:10px;
+    width: 90px;
+    height: 35px;
+ 
+	margin-right: 25px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+
+
+    z-index: 1;
+    float:right;
+
+    border: 2px solid white ;
+    background: white;
+    color: #bf4914 ;
+}
+
+.filtre-match-button button:after{
+    background: #bf4914 ;
+}
+.filtre-match-button button:hover{
+    color:white;
+}
+
+
+
+.filtre-match-button button:after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    
+    transition: all 0.3s ease;
+}
+
+.filtre-match-button button:hover:after {
+    left: 0;
+    width: 100%;
+}
+.filtre-match-button button:active {
+    top: 2px;
+}
+
+
+
+
+/*--------------------------FIN LISTES MATCHS ---------------------------------------------------*/

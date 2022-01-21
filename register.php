@@ -21,9 +21,9 @@
       <ul class="nav-links">
         <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
 		
-        <li><a href="index.php">Accueil</a></li>
-		
-	    <li><a href="simple.php">Simple</a></li>
+	    <li><a href="liste-matchs-simple.php">Simple</a></li>
+	   
+        <li><a href="liste-matchs-double.php">Double</a></li>
 	   
         <li><a href="double.php">Double</a></li>
         <li class="hidden-space">hola<li>
@@ -94,7 +94,7 @@
                 }
                 ?>
             <form action="register-traitement.php" method="post">
-                <h2 class="form-title">CONNEXION</h2>       
+                <h2 class="form-title">INSCRIPTION</h2>       
                 <div class="form-element">
                     <input type="text" name="login" class="form-control" placeholder="Login" required="required" autocomplete="on">
                 </div>

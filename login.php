@@ -21,9 +21,9 @@
       <ul class="nav-links">
         <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
 		
-        <li><a href="index.php">Accueil</a></li>
-		
-	    <li><a href="simple.php">Simple</a></li>
+	    <li><a href="liste-matchs-simple.php">Simple</a></li>
+	   
+        <li><a href="liste-matchs-double.php">Double</a></li>
 	   
         <li><a href="double.php">Double</a></li>
         <li class="hidden-space">hola<li>
@@ -46,7 +46,22 @@
   <div class="login-content">
 
         <div class="login-form">
-             <?php 
+
+            
+            <form action="login-traitement.php" method="post">
+                <h2 class="form-title">CONNEXION</h2>       
+                <div class="form-element">
+                    <input type="email" name="email" class="form-control" placeholder="Email" required="required" autocomplete="off">
+                </div>
+                <div class="form-element">
+                    <input type="password" name="password" class="form-control" placeholder="Password" required="required" autocomplete="off">
+                </div>
+                <div class="form-element form-submit">
+                    <button type="submit" class="form-btn ">VALIDER</button>
+                </div>   
+            </form>
+
+            <?php 
                 if(isset($_GET['login_err']))
                 {
                     $err = htmlspecialchars($_GET['login_err']);
@@ -76,27 +91,27 @@
                             </div>
                         <?php
                         break;
+
+                        case 'account_needed':
+                            ?>
+                                <div class="alert alert-danger">
+                                    <strong>Erreur</strong> Compte nécessaire pour achat
+                                </div>
+                            <?php
+                            break;
                     }
                 }
                 ?> 
-            
-            <form action="login-traitement.php" method="post">
-                <h2 class="form-title">CONNEXION</h2>       
-                <div class="form-element">
-                    <input type="email" name="email" class="form-control" placeholder="Email" required="required" autocomplete="off">
-                </div>
-                <div class="form-element">
-                    <input type="password" name="password" class="form-control" placeholder="Password" required="required" autocomplete="off">
-                </div>
-                <div class="form-element form-submit">
-                    <button type="submit" class="form-btn ">VALIDER</button>
-                </div>   
-            </form>
+
             <div class="form-redirect">
-            <p> Vous n'avez pas de compte ? <br> <a href="register.php">S'inscrire</a></p>
+                <p> Vous n'avez pas de compte ? <br> <a href="register.php">S'inscrire</a></p>
             </div>
+
+            
         </div>
-		
+
+        
+       
 </div>	
 
 
