@@ -12,10 +12,11 @@ class AccueilController extends AbstractController
 
     public function accueil(): Response
     {
-        ///php
+
+        $connexion = false;
 
         return $this->render('accueil/accueil.html.twig', [
-            ///'number' => $number,
+            'number' => $number,
         ]);
     }
 }
