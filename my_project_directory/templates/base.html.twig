@@ -28,17 +28,18 @@
                 <li><a href="{{ path("liste_matchs_simple") }}">Simple</a></li>
             
                 <li><a href="{{ path("liste_matchs_double") }}">Double</a></li>
-
+                {% if app.session.get('user') == null %}
+                <li><a href="{{ path("connexion") }}">Connexion</a></li>
+                {% else %}
                 <li class="hidden-space">hola<li>
-
                 <li>
-                <a href="{{ path("mon_espace") }}" class="desktop-item">Espace Perso</a>
+                <a href="{{ path("mon_espace") }}" class="desktop-item">Espace perso</a>
                 <input type="checkbox" id="showDrop">
                 <label for="showDrop" class="mobile-item">Espace Perso</label>
                 <ul class="drop-menu">
                     <li><a href="{{ path("mon_espace") }}">Mon espace</a></li>
-
-                    <li><a href="{{ path("connexion")}}">Connexion</a></li>
+                    <li><a href="{{ path("deconnexion")}}">Deconnexion</a></li>
+                    {% endif %}
                 </ul>
                 </li>
             </ul>

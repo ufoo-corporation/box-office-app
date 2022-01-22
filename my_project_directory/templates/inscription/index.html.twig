@@ -8,36 +8,37 @@
 
   <div class="register-content">
 
-        {{form_start(form)}}
         
-        {{form_end(form)}}
 
         <div class="register-form">
         
-            <form action="formulaire_inscription" method="post">
-                <h2 class="form-title">INSCRIPTION</h2>    
+        
+            <form action="{{ path("inscription") }}" method="post">
+                <h2 class="form-title">INSCRIPTION</h2>
+                {{form_start(form)}}
+        
+                    
                  <div class="form-element">
-                    <input type="text" name="nom" class="form-control" placeholder="Nom" required="required" autocomplete="on">
+                    {{form_row(form.nom)}}
                 </div>
                 <div class="form-element">
-                    <input type="text" name="prenom" class="form-control" placeholder="Prenom" required="required" autocomplete="on">
+                    {{form_row(form.prenom)}}
                 </div>  
                 <div class="form-element">
-                    <input type="email" name="email" class="form-control" placeholder="Email" required="required" autocomplete="on">
+                    {{form_row(form.mail)}}
                 </div>
                 <div class="form-element">
-                    <input type="password" name="password" class="form-control" placeholder="Password" required="required" autocomplete="off">
-                </div>
-                <div class="form-element">
-                <input type="password" name="password_retype" class="form-control" placeholder="Confirmation Password" required="required" autocomplete="off">
+                    {{form_row(form.mdp)}}
                 </div>
                 <div class="form-element form-submit">
-                    <button type="submit" class="form-btn ">VALIDER</button>
-                </div>   
+                    {{form_row(form.save)}}
+                </div> 
+                {{form_end(form)}}  
             </form>
             <div class="form-redirect">
-            <p> Vous avez déja un compte ? <br> <a href="formulaire_inscription">Se connecter</a></p>
+            <p> Vous avez déja un compte ? <br> <a href="connexion">Se connecter</a></p>
             </div>
+            
         </div>
 		
 </div>	

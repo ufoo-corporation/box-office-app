@@ -8,7 +8,6 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\User;
 use App\Form\Type\UserType;
 use Symfony\Component\HttpFoundation\Request;
-use App\Controller\UserController;
 use Doctrine\Persistence\ManagerRegistry;
 
 class InscriptionController extends AbstractController
@@ -25,6 +24,7 @@ class InscriptionController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             
             $user = $form->getData();
+            $user->setMdp(password_hash($user->getMdp(), PASSWORD_BCRYPT));
 
             $entityManager = $doctrine->getManager();
 

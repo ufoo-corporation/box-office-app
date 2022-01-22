@@ -7,20 +7,23 @@
 
   <div class="login-content">
 
+        {{form_start(form)}}
         <div class="login-form">
 
             
-            <form action="login-traitement.php" method="post">
+            <form action="connexion" method="post">
+            
                 <h2 class="form-title">CONNEXION</h2>    
                 <div class="form-element">
-                    <input type="email" name="email" class="form-control" placeholder="Email" required="required" autocomplete="off">
+                    {{form_row(form.mail)}}
                 </div>
                 <div class="form-element">
-                    <input type="password" name="password" class="form-control" placeholder="Password" required="required" autocomplete="off">
+                    {{form_row(form.mdp)}}
                 </div>
                 <div class="form-element form-submit">
                     <button type="submit" class="form-btn ">VALIDER</button>
-                </div>   
+                </div> 
+                
             </form>
 
            

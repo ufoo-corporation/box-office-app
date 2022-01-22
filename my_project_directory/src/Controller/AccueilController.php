@@ -16,7 +16,7 @@ class AccueilController extends AbstractController
         $connexion = false;
 
         return $this->render('accueil/accueil.html.twig', [
-            'number' => $number,
+            
         ]);
     }
 }
