@@ -10,24 +10,25 @@
     <div class="main-presentation">
       <div class="presentation-text">
        <h1> Bienvenue sur la Billeterie de l'Open Parc Auverge-Rhône Alpes ! </h1>
-       <h2> Rendez-vous au parc de la tête d'or pour la 5e édition de l'open parc du 15 au 21 mai 2022</h2>
+       <h2> Rendez-vous au parc de la tête d'or pour la 5e édition de l'open parc du 16 au 23 mai 2022</h2>
+      
       </div> 
     </div>
-    <div id="tournoi-simple" class="main-tournoi">
-        <h1> TOURNOI SIMPLE</h1>
+    <div class="main-tournoi">
+        <h1> CHOIX DU JOUR </h1>
         
-        <div class="tournament-link">
-                <button class="slide" onclick="window.location.href = '{{ path("liste_matchs_simple") }}';">ACCES >></button>
+        <div class="choix-jour-link">
+                <button class="slide" onclick="window.location.href = '{{ path("choix_jour") }}';">ACCES >></button>
         </div>
     </div>
-    <div id="tournoi-double" class="main-tournoi">
-        <h1> TOURNOI DOUBLE</h1>
-        <div class="tournament-link">
-                <button class="slide" onclick="window.location.href = '{{ path("liste_matchs_double") }}';">ACCES >></button>
+
+    <div class="main-presentation">
+        <div class="presentation-text">
+            <h2> Un billet correspond à l'accès à un jour de compétition </h2>
+            <h2> Les prix varient en fonctions du tour, de l'emplacement et du type de billets : grand public/The big match, Licencié ou Journée de la solidarité </h2> 
+            <h4> Les Billets THE BIG MATCH correspondent au demi-finales et finales ayant réspectivement lieu le 20 et 21 mai </h2> 
         </div>
-
     </div>
-
 </div>
 
 
