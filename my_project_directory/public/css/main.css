@@ -223,14 +223,18 @@ html, body{
     flex-direction: column;
     margin-top:60px;
 	color:white;
-	height:calc(100% - (70px - 230px));
+	min-height:calc(100% - (70px + 180px));
 	background: #404d97;
 }
 
 .main-presentation{
 	background-color:#404d97;
 
-	height:calc(100% - (70px - 230px)/3)
+
+}
+
+.main-presentation h2{
+	padding:10px;
 }
 
 .presentation-text{
@@ -249,18 +253,15 @@ html, body{
 	flex-flow: row wrap;
     align-items:center;
 	border:solid 1px #404d97;
-	height:calc(100% - (70px - 230px)/3);
+
+	background:#bf4914 ;
+
+	padding:50px;
+
 
 
 }
-#tournoi-simple{
-    
-    background-color:#bf4914 ;
-}
 
-#tournoi-double{
-    background-color:#bf4914 ;
-}
  
 
 
@@ -271,7 +272,7 @@ html, body{
 }
 
 
-.tournament-link button {
+.choix-jour-link button {
     margin: 20px;
     outline: none;
 
@@ -292,34 +293,15 @@ html, body{
     float:right;
 }
 
-#tournoi-double .tournament-link button{
+.choix-jour-link button{
     border: 2px double #404d97;
     background: white;
     color: #404d97;
 }
 
-#tournoi-double .tournament-link button:after{
+.choix-jour-link button:after{
     background: #404d97;
-}
-#tournoi-double .tournament-link button:hover{
-    color:white;
-}
-
-#tournoi-simple .tournament-link button{
-    border: 2px double #404d97;
-    background: white;
-    color: #404d97;
-}
-
-#tournoi-simple .tournament-link button:after{
-    background: #404d97;
-}
-#tournoi-simple .tournament-link button:hover{
-    color:white;
-}
-
-.tournament-link button:after {
-    position: absolute;
+	position: absolute;
     content: "";
     width: 0;
     height: 100%;
@@ -329,12 +311,19 @@ html, body{
     
     transition: all 0.3s ease;
 }
+.choix-jour-link button:hover{
+    color:white;
+}
 
-.tournament-link button:hover:after {
+
+
+
+
+.choix-jour-link button:hover:after {
     left: 0;
     width: 100%;
 }
-.tournament-link button:active {
+.choix-jour-link button:active {
     top: 2px;
 }
 
@@ -482,6 +471,15 @@ padding:10px;
 
 /*--------------------------DEBUT CHOIX CATEGORIE ---------------------------------------------------*/
 
+.match-categ-content{
+	width:100%;
+    display:flex;
+    flex-direction: column;
+    margin-top:60px;
+	color:white;
+	height:calc(100% - (70px - 230px));
+	background: #404d97;
+}
 .match-title{
 	padding:20px;
 	border-bottom:solid white;
@@ -657,10 +655,17 @@ div.cat2{
 	margin-bottom:auto;
 	margin-top:10px;
 	border: solid white;
-	max-width:480px;
+	max-width:500px;
 
 
 
+}
+
+
+
+#reduce_code{
+	width:90px;
+	
 }
 
 .billets-top{
@@ -687,6 +692,14 @@ div.cat2{
 
 }
 
+.billets-form-element input{
+	height:30px;
+}
+
+.nbBillet{
+	width:80px;
+}
+
 
 .billets-bottom .billets-form-element{
 	padding:25px;
@@ -694,6 +707,7 @@ div.cat2{
 	flex-flow: row wrap;
 	justify-content: flex-start;
 	gap:30px;
+	align-items:center;
 }
 
 .element-borderbottom{
