@@ -8,13 +8,20 @@
 
   <div class="register-content">
 
+        {{form_start(form)}}
+        
+        {{form_end(form)}}
+
         <div class="register-form">
         
-            <form action="register-traitement.php" method="post">
-                <h2 class="form-title">INSCRIPTION</h2>       
-                <div class="form-element">
-                    <input type="text" name="login" class="form-control" placeholder="Login" required="required" autocomplete="on">
+            <form action="formulaire_inscription" method="post">
+                <h2 class="form-title">INSCRIPTION</h2>    
+                 <div class="form-element">
+                    <input type="text" name="nom" class="form-control" placeholder="Nom" required="required" autocomplete="on">
                 </div>
+                <div class="form-element">
+                    <input type="text" name="prenom" class="form-control" placeholder="Prenom" required="required" autocomplete="on">
+                </div>  
                 <div class="form-element">
                     <input type="email" name="email" class="form-control" placeholder="Email" required="required" autocomplete="on">
                 </div>
@@ -29,7 +36,7 @@
                 </div>   
             </form>
             <div class="form-redirect">
-            <p> Vous avez déja un compte ? <br> <a href="{{ path("connexion") }}">Se connecter</a></p>
+            <p> Vous avez déja un compte ? <br> <a href="formulaire_inscription">Se connecter</a></p>
             </div>
         </div>
 		
