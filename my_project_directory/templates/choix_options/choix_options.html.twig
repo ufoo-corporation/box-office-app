@@ -26,7 +26,7 @@
         </div>
 
         <div class="billets-bottom">
-            <form action="{{ path('confirmation_achat', { 'type' : type, 'jour' : date }) }}" class="billets-form" method="post">
+            <form action="{{ path('confirmation_achat', {'id' : jour ,'type' : type  }) }}" class="billets-form" method="post">
 
                 <div class="billets-form-element element-borderbottom">
                     <label for="type-select">Types de billets</label>
@@ -55,33 +55,33 @@
 
                    
 
-                <div class="billets-form-element element-borderbottom" id="ifReduce" style="display:none;">
+                    <div class="billets-form-element element-borderbottom" id="ifReduce" style="display:none;">
                     <label for="reduce_code"> Ajoutez votre n°Licence : </label> <input type="text" id="reduce_code" name="reduce_code" /><br/>
                 
                 </div>
 
-                {% if type != 2 %}
+                {% if type != 3 %}
                 <div class="billets-form-element element-borderbottom">
                     <label for="nb-select">Nombre de place</label>
 
-                    <input type="number" min="1" name="nbplaceAdult"  class="nbBillet" value="1" required>
+                    <input type="number" min="1" name="nbPlaceAdult"  class="nbBillet" value="1" required>
                 </div>
                 {% endif %}
                 
                 
-                {% if type == 2 %}
+                {% if type == 3 %}
 
                 <div class="billets-form-element element-borderbottom">
                     <label for="nb-select">Nombre de place Adultes</label>
 
-                    <input type="number" min="1" name="nbplaceAdult" class="nbBillet" required>
+                    <input type="number" min="1" name="nbPlaceAdult" class="nbBillet" required>
 
                 </div>
 
                 <div class="billets-form-element element-borderbottom">
                     <label for="nb-select">Nombre de place -12</label>
 
-                    <input type="number" min="1" name="nbplaceChild" class="nbBillet" required>
+                    <input type="number" min="1" name="nbPlaceChild" class="nbBillet" required>
 
                     </select>
                 </div>

@@ -17,7 +17,9 @@ class ChoixOptionsController extends AbstractController
         if(isset($_POST['type']) or isset($_POST['nbplaceAdult']) or isset($_POST['nbplaceChild'])){
             echo nl2br("\n\n\n\n".$_POST['type'].$_POST['nbplaceAdult'].$_POST['nbplaceChild']);
         }
+
         $date = $day->getId();
+        
         switch($type){
             case 1:
                 $place = 'Loges';
@@ -32,6 +34,9 @@ class ChoixOptionsController extends AbstractController
                 $place = 'Annexe';
                 break;
         }
+
+        
+
         return $this->render('choix_options/choix_options.html.twig', [
             'date' => $day->getDate(),
             'type' => $type,

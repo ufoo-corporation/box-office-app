@@ -33,6 +33,7 @@ class ConnexionController extends AbstractController
             if(password_verify($user->getMdp(), $dbuser->getMdp())){
                 $session = $request->getSession();
                 $session->set('user', $dbuser->getPrenom());
+                $session->set('id', $dbuser->getId());
                 $prenom = $session->get('user');
             }
             else{
