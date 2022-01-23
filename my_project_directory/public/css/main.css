@@ -477,7 +477,7 @@ padding:10px;
     flex-direction: column;
     margin-top:60px;
 	color:white;
-	height:calc(100% - (70px - 230px));
+	min-height:calc(100% - (70px - 230px));
 	background: #404d97;
 }
 .match-title{
@@ -497,8 +497,8 @@ padding:10px;
 
 .match-info img{
 padding:10px;
-max-height:80%;
-max-width:100%;
+max-height:70%;
+max-width:80%;
 height:auto;
 width:auto;
 
@@ -527,7 +527,7 @@ div.categorie{
 	border:solid white;
 	text-align: center;
 	padding:20px;
-	margin:auto;
+	margin:40px auto auto auto;
 }
 
 div.categorie header{
@@ -551,6 +551,11 @@ div.cat1{
 div.cat2{
 	background-color: grey ;
 }
+
+div.annexe{
+	background-color: #019909 ;
+}
+
 
 .categorie button {
 
@@ -585,16 +590,20 @@ div.cat2{
     color: #bf4914 ;
 }
 
-.cat1 button{
-    border: 1px solid white;
+.annexe button{
+	border: 1px solid white;
     background: white;
-    color: #bf4914 ;
+    color: #019909 ;
 }
 
 .cat2 button{
     border: 1px solid white;
     background: white;
     color: grey ;
+}
+
+.annexe button:after{
+	background:#019909 ;
 }
 
 .loge button:after{
