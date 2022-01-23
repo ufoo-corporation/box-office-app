@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Paiement{% endblock %}
+{% block javascripts %} <script type="text/javascript" src="{{ asset("js/match-billets.js") }}"></script> {% endblock %}
+{% block body %}
+
+
+
+<div class="billets-page-content">
+
+    <div class="billets-form-content">
+    
+        <div class="billets-top">
+
+            <div class="billets-image">
+                <img src="{{ asset("images/openparc-logo.png") }}" alt="logo open parc">
+            </div>
+
+            <div class="billets-info">
+                <header><strong>  {{date}} </strong></header> <!-- afficher infos du match sélectionnés -->
+                <h2>  {{place}} </h2>
+
+            </div>
+            
+        </div>
+
+        <div class="billets-bottom">
+
+                <div class="billets-form-element element-borderbottom">
+                    <label for="type-select">Types de billets</label>
+                </div>
+
+                {% if place != 'Catégorie 2' %}
+                <div class="billets-form-element element-borderbottom">
+                    <label for="nb-select">Nombre de place</label>
+
+                </div>
+                {% endif %}
+                
+                
+                {% if place == 'Catégorie 2' %}
+
+                <div class="billets-form-element element-borderbottom">
+                    <label for="nb-select">Nombre de place Adultes</label>
+                </div>
+
+                <div class="billets-form-element element-borderbottom">
+                    <label for="nb-select">Nombre de place -12</label>
+                </div>
+
+                {% endif %}
+                
+
+                <div class="billets-form-button">
+                    <button type="submit" class="billets-submit">
+                        Payer les places
+                    </button>
+                </div>  
+        </div>
+
+
+
+    </div>
+
+</div>
+
+
+{% endblock %}

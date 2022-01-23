@@ -4,7 +4,7 @@
 {% block javascripts %} <script type="text/javascript" src="{{ asset("js/match-billets.js") }}"></script> {% endblock %}
 {% block body %}
 
-<body>
+
 
 
 <div class="billets-page-content">
@@ -18,22 +18,22 @@
             </div>
 
             <div class="billets-info">
-                <header><strong>  JOUR </strong></header> <!-- afficher infos du match sélectionnés -->
-                <h2>  Categorie </h2>
+                <header><strong>  {{date}} </strong></header> <!-- afficher infos du match sélectionnés -->
+                <h2>  {{place}} </h2>
 
             </div>
             
         </div>
 
         <div class="billets-bottom">
-            <form action="./php/match-billets-traitement.php" class="billets-form" method="post">
+            <form action="{{ path('confirmation_achat', { 'type' : type, 'jour' : date }) }}" class="billets-form" method="post">
 
                 <div class="billets-form-element element-borderbottom">
                     <label for="type-select">Types de billets</label>
                 
 
 
-                    <select class="billets-select" onchange="reduce_check(this);">
+                    <select name="type" class="billets-select" onchange="reduce_check(this);">
 
                         <option value="GP">Grand public</option>
                         <option value="L">Licencié</option>
@@ -60,19 +60,16 @@
                 
                 </div>
 
-                <div class="billets-form-element element-borderbottom">
-                    <label>  prix unitaire  </label>
-                </div>
-
-                <!-- SI billets de categorie 1 et loges -->
+                {% if type != 2 %}
                 <div class="billets-form-element element-borderbottom">
                     <label for="nb-select">Nombre de place</label>
 
-                    <input type="number" min="1" name="nbplaceAdult"  class="nbBillet" required>
+                    <input type="number" min="1" name="nbplaceAdult"  class="nbBillet" value="1" required>
                 </div>
+                {% endif %}
                 
-
-                    <!-- SI BILLETS DE CATEGORIE 2
+                
+                {% if type == 2 %}
 
                 <div class="billets-form-element element-borderbottom">
                     <label for="nb-select">Nombre de place Adultes</label>
@@ -89,13 +86,7 @@
                     </select>
                 </div>
 
-                -->
-
-                
-
-                <div class="billets-form-element element-borderbottom">
-                    <label> TOTAL :  prix x nbplace </label>
-                </div>   
+                {% endif %}
                 
 
                 <div class="billets-form-button">

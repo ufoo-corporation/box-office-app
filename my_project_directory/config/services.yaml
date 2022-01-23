@@ -5,6 +5,14 @@
 # https://symfony.com/doc/current/best_practices.html#use-parameters-for-application-configuration
 parameters:
 
+    app.enfant: [20, 20, 20 , 25, 30, 38, 38, 50]
+    app.cat2: [25, 25, 25, 30, 35, 48, 48, 65]
+    app.cat1: [30, 30, 30, 40, 45, 60, 60, 75]
+    app.licence: 0.83
+    app.solidarite: 0.30
+    app.loges: [100, 100, 100, 110, 120, 130, 130, 190]
+    app.annexe: 15
+
 services:
     # default configuration for services in *this* file
     _defaults:
