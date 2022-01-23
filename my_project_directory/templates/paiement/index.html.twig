@@ -1,11 +1,31 @@
-{% extends 'base.html.twig' %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}PAIEMENT!{% endblock %}</title>
+        
+        <link href="{{ asset('css/main.css') }}" rel="stylesheet"/>
+        
+        {% block stylesheets %}
+            
+        {% endblock %}
 
-{% block title %}Paiement{% endblock %}
+        {% block javascripts %}
+            
+        {% endblock %}
+    </head>
+    <body>
+ 
+ 
 
 {% block body %}
+<div class="paiement-content">
  <div class="loading-text">
         
     <h1 class="loading text"> Vous allez être redirigé vers la page de paiement... </h1>
     
 <div class="spinner"></div>
+</div>
 {% endblock %}
+ </body>
+</html>
