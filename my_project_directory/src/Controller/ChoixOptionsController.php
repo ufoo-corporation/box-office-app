@@ -14,10 +14,6 @@ class ChoixOptionsController extends AbstractController
     #[Route('/choix-options/{id}/{type}', name: 'choix_options')]
     public function choix_options(Day $day, int $type): Response
     {
-        if(isset($_POST['type']) or isset($_POST['nbplaceAdult']) or isset($_POST['nbplaceChild'])){
-            echo nl2br("\n\n\n\n".$_POST['type'].$_POST['nbplaceAdult'].$_POST['nbplaceChild']);
-        }
-
         $date = $day->getId();
         
         switch($type){

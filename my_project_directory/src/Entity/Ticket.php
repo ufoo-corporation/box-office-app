@@ -28,6 +28,9 @@ class Ticket
     #[ORM\Column(type: 'integer')]
     private $day;
 
+    #[ORM\Column(type: 'integer')]
+    private $user;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -89,6 +92,18 @@ class Ticket
     public function setDay(int $day): self
     {
         $this->day = $day;
+
+        return $this;
+    }
+
+    public function getUser(): ?int
+    {
+        return $this->user;
+    }
+
+    public function setUser(int $user): self
+    {
+        $this->user = $user;
 
         return $this;
     }

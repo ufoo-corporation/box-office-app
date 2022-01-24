@@ -9,7 +9,6 @@ use App\Entity\User;
 use App\Form\Type\UserType;
 use App\Repository\UserRepository;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\RequestStack;
 
 class ConnexionController extends AbstractController
 {

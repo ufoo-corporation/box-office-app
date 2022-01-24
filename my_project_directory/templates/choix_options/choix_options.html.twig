@@ -26,7 +26,12 @@
         </div>
 
         <div class="billets-bottom">
+            {% if app.session.get('user') == null %}
+            <form action="{{ path('connexion') }}" class="billets-form" method="post">
+            {% endif %}
+            {% if app.session.get('user') != null %}
             <form action="{{ path('confirmation_achat', {'id' : jour ,'type' : type  }) }}" class="billets-form" method="post">
+            {% endif %}
 
                 <div class="billets-form-element element-borderbottom">
                     <label for="type-select">Types de billets</label>
@@ -44,19 +49,19 @@
                 </div>
 
                 <div class="billets-form-element element-borderbottom" id="ifL" style="display: none;">
-                        <label  for="reduce_code"> Ajoutez votre n°Licence  </label> <input type="text" id="reduce_code" name="reduce_code" /><br/>
+                        <label  for="reduce_code"> Ajoutez votre n°Licence  </label> <input type="text" id="reduce_code" name="reduce_code" required/><br/>
                 
                     </div>
 
                     <div class="billets-form-element element-borderbottom" id="ifJDS" style="display: none;">
-                        <label  for="reduce_code"> Ajoutez votre n°Associatif  </label> <input type="text" id="reduce_code" name="reduce_code" /><br/>
+                        <label  for="reduce_code"> Ajoutez votre n°Associatif  </label> <input type="text" id="reduce_code" name="reduce_code" required/><br/>
                 
                     </div>
 
                    
 
                     <div class="billets-form-element element-borderbottom" id="ifReduce" style="display:none;">
-                    <label for="reduce_code"> Ajoutez votre n°Licence : </label> <input type="text" id="reduce_code" name="reduce_code" /><br/>
+                    <label for="reduce_code"> Ajoutez votre n°Licence : </label> <input type="text" id="reduce_code" name="reduce_code" required/><br/>
                 
                 </div>
 

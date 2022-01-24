@@ -17,47 +17,32 @@
 
     <div class="mes-achats-liste">
 
-    <!-- foreach billets achetés -->
+    {% for ticket in tickets %}
 
                 <div class="mes-achats-element">
-                    <h1>DATE</h1> <!---afficher informations à partir de la BD -->
+                    <h1>{{days[ticket.id].date}}</h1> <!---afficher informations à partir de la BD -->
                     <div class="mes-achats-element-infos">
-                        <h2> Categorie </h2>
-                        <h2> nbplace acheté </h2>
-                        <h2> type de billets </h2>
+                        <h2>{% set categorie = categories[ticket.id] %}
+                            {% if categorie == 1 %}
+                                    Loges
+                            {% elseif categorie == 2 %}
+                                    Catégorie 1
+                            {% elseif categorie == 3 %}
+                                    Catégorie 2
+                            {% elseif categorie == 4 %}
+                                    Annexe
+                                
+                            {% endif %}
+                            
+                        </h2>
+                        <h2>Adultes : {{ticket.nbPlacesAdulte}}</h2>
+                        <h2>Enfants : {{ticket.nbPlacesEnfant}}</h2>
 
                     </div>
                 </div>
+    {% endfor %}
 
-                <div class="mes-achats-element">
-                    <h1>DATE</h1> <!---afficher informations à partir de la BD -->
-                    <div class="mes-achats-element-infos">
-                        <h2> Categorie </h2>
-                        <h2> nbplace acheté </h2>
-                        <h2> type de billets </h2>
-
-                    </div>
-                </div>
-
-                <div class="mes-achats-element">
-                    <h1>DATE</h1> <!---afficher informations à partir de la BD -->
-                    <div class="mes-achats-element-infos">
-                        <h2> Categorie </h2>
-                        <h2> nbplace acheté </h2>
-                        <h2> type de billets </h2>
-
-                    </div>
-                </div>
-
-                <div class="mes-achats-element">
-                    <h1>DATE</h1> <!---afficher informations à partir de la BD -->
-                    <div class="mes-achats-element-infos">
-                        <h2> Categorie </h2>
-                        <h2> nbplace acheté </h2>
-                        <h2> type de billets </h2>
-
-                    </div>
-                </div>
+                
     </div>
 
 </div>

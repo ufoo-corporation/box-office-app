@@ -8,12 +8,16 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Day;
 use App\Entity\Ticket;
 use App\Repository\DayRepository;
+use Doctrine\Persistence\ManagerRegistry;
+use Symfony\Component\HttpFoundation\Request;
 
 class ConfirmationAchatController extends AbstractController
 {
     #[Route('/confirmation-achat/{id}/{type}', name: 'confirmation_achat')]
-    public function index(Day $day, $type): Response
+    public function index(Day $day, $type, ManagerRegistry $doctrine, Request $request): Response
     {
+        $entityManager = $doctrine->getManager();
+
         $date = $day->getDate();
         $index = $day->getId();
 
@@ -75,9 +79,19 @@ class ConfirmationAchatController extends AbstractController
             $prix = $prix*$this->getParameter('app.solidarite');
         }
         
-        //$prix = $_POST['nbPlaceAdult']*
+        $session = $request->getSession();
+
         $ticket = new Ticket();
-        $ticket->setPrixTotal(1);
+        $ticket->setPrixTotal($prix);
+        $ticket->setType($type);
+        $ticket->setNbPlacesAdulte($_POST['nbPlaceAdult']);
+        $ticket->setNbPlacesEnfant($_POST['nbPlaceChild']);
+        $ticket->setDay($index);
+        $ticket->setUser($session->get('id'));
+
+        $entityManager->persist($ticket);
+
+        $entityManager->flush();
 
         return $this->render('confirmation_achat/index.html.twig', [
             'date' => $date,
