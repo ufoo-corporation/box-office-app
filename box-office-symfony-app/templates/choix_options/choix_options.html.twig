@@ -4,9 +4,6 @@
 {% block javascripts %} <script type="text/javascript" src="{{ asset("js/match-billets.js") }}"></script> {% endblock %}
 {% block body %}
 
-
-
-
 <div class="billets-page-content">
 
     <div class="billets-form-content">
@@ -18,82 +15,56 @@
             </div>
 
             <div class="billets-info">
-                <header><strong>  {{date}} </strong></header> <!-- afficher infos du match sélectionnés -->
-                <h2>  {{place}} </h2>
-
+                <header><strong>{{ date }}</strong></header>
+                <h2>{{ place }}</h2>
             </div>
             
         </div>
 
         <div class="billets-bottom">
             {% if app.session.get('user') == null %}
-            <form action="{{ path('connexion') }}" class="billets-form" method="post">
-            {% endif %}
-            {% if app.session.get('user') != null %}
-            <form action="{{ path('confirmation_achat', {'id' : jour ,'type' : type  }) }}" class="billets-form" method="post">
+                <form action="{{ path('connexion') }}" class="billets-form" method="post">
+            {% else %}
+                <form action="{{ path('confirmation_achat', {'id' : jour ,'type' : type  }) }}" class="billets-form" method="post">
             {% endif %}
 
                 <div class="billets-form-element element-borderbottom">
                     <label for="type-select">Types de billets</label>
                 
-
-
                     <select name="type" class="billets-select" onchange="reduce_check(this);">
-
                         <option value="GP">Grand public</option>
                         <option value="L">Licencié</option>
                         <option value="JDS">Journée de la solidarité</option>
                     </select>
 
-
                 </div>
 
                 <div class="billets-form-element element-borderbottom" id="ifL" style="display: none;">
-                        <label  for="reduce_code"> Ajoutez votre n°Licence  </label> <input type="text" id="reduce_code" name="reduce_code" required/><br/>
-                
-                    </div>
+                    <label for="lInput">Ajoutez votre n°Licence</label>
+                    <input type="text" id="lInput" name="lInput" required/>
+                </div>
 
-                    <div class="billets-form-element element-borderbottom" id="ifJDS" style="display: none;">
-                        <label  for="reduce_code"> Ajoutez votre n°Associatif  </label> <input type="text" id="reduce_code" name="reduce_code" required/><br/>
-                
-                    </div>
-
-                   
-
-                    <div class="billets-form-element element-borderbottom" id="ifReduce" style="display:none;">
-                    <label for="reduce_code"> Ajoutez votre n°Licence : </label> <input type="text" id="reduce_code" name="reduce_code" required/><br/>
-                
+                <div class="billets-form-element element-borderbottom" id="ifJDS" style="display: none;">
+                    <label  for="jdsInput">Ajoutez votre n°Associatif</label>
+                    <input type="text" id="jdsInput" name="jdsInput" required/>
                 </div>
 
                 {% if type != 3 %}
-                <div class="billets-form-element element-borderbottom">
-                    <label for="nb-select">Nombre de place</label>
-
-                    <input type="number" min="1" name="nbPlaceAdult"  class="nbBillet" value="1" required>
-                </div>
+                    <div class="billets-form-element element-borderbottom">
+                        <label for="nb-select">Nombre de place</label>
+                        <input type="number" min="1" name="nbPlaceAdult"  class="nbBillet" value="1" required>
+                    </div>              
+                {% else %}
+                    <div class="billets-form-element element-borderbottom">
+                        <label for="nb-select">Nombre de place Adultes</label>
+                        <input type="number" min="1" name="nbPlaceAdult" class="nbBillet" required>
+                    </div>
+                    <div class="billets-form-element element-borderbottom">
+                        <label for="nb-select">Nombre de place -12 ans</label>
+                        <input type="number" min="1" name="nbPlaceChild" class="nbBillet" required>
+                    </div>
                 {% endif %}
                 
-                
-                {% if type == 3 %}
-
-                <div class="billets-form-element element-borderbottom">
-                    <label for="nb-select">Nombre de place Adultes</label>
-
-                    <input type="number" min="1" name="nbPlaceAdult" class="nbBillet" required>
-
-                </div>
-
-                <div class="billets-form-element element-borderbottom">
-                    <label for="nb-select">Nombre de place -12</label>
-
-                    <input type="number" min="1" name="nbPlaceChild" class="nbBillet" required>
-
-                    </select>
-                </div>
-
-                {% endif %}
-                
-
                 <div class="billets-form-button">
                     <button type="submit" class="billets-submit">
                         Payer les places
@@ -103,11 +74,8 @@
             </form>
         </div>
 
-
-
     </div>
 
 </div>
-
 
 {% endblock %}

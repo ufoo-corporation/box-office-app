@@ -26,24 +26,19 @@ class ConnexionController extends AbstractController
             
             $user = $form->getData();
 
-            $dbuser = $userRepository
-                ->findOneBy(['mail' => $user->getMail()]);
+            $dbuser = $userRepository->findOneBy(['mail' => $user->getMail()]);
             
             if(password_verify($user->getMdp(), $dbuser->getMdp())){
                 $session = $request->getSession();
                 $session->set('user', $dbuser->getPrenom());
                 $session->set('id', $dbuser->getId());
                 $prenom = $session->get('user');
+                return $this->redirectToRoute('accueil');
             }
             else{
                 
             }
-
-            
-            
         }
-        
-
         
         $form = $this->createForm(UserType::class, $user);
         return $this->renderForm('connexion/connexion.html.twig', [
