@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello MonEspaceController!{% endblock %}
+
+{% block body %}
+
+<!-- Acces que si connecté -->
+ 
+
+
+
+<div class="mon-espace-content">
+
+    <header class="mon-espace-title">
+        MES BILLETS
+    </header>
+
+    <div class="mes-achats-liste">
+
+    {% for ticket in tickets %}
+
+                <div class="mes-achats-element">
+                    <h1>{{days[ticket.id].date}}</h1> <!---afficher informations à partir de la BD -->
+                    <div class="mes-achats-element-infos">
+                        <h2>{% set categorie = categories[ticket.id] %}
+                            {% if categorie == 1 %}
+                                    Loges
+                            {% elseif categorie == 2 %}
+                                    Catégorie 1
+                            {% elseif categorie == 3 %}
+                                    Catégorie 2
+                            {% elseif categorie == 4 %}
+                                    Annexe
+                                
+                            {% endif %}
+                            
+                        </h2>
+                        <h2>Adultes : {{ticket.nbPlacesAdulte}}</h2>
+                        <h2>Enfants : {{ticket.nbPlacesEnfant}}</h2>
+
+                    </div>
+                </div>
+    {% endfor %}
+
+                
+    </div>
+
+</div>
+
+
+
+{% endblock %}
