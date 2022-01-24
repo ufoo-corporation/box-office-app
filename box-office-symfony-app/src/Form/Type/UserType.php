@@ -45,7 +45,12 @@ class UserType extends AbstractType
                     'placeholder' => 'Mot de passe'
                 )
                 ])
-            ->add('save', SubmitType::class)
+            ->add('Inscription', SubmitType::class,[
+                'attr' => [
+                    'class' => 'form-btn'
+                ]
+                    
+            ])
         ;
     }
 

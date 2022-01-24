@@ -33,8 +33,15 @@ class InscriptionController extends AbstractController
 
             // actually executes the queries (i.e. the INSERT query)
             $entityManager->flush();
+
+            $session = $request->getSession();
+            $session->set('user', $user->getPrenom());
+            $session->set('id', $user->getId());
+            return $this->redirectToRoute('accueil');
             
         }
+
+        
 
         $form = $this->createForm(UserType::class, $user);
         return $this->renderForm('inscription/index.html.twig', [

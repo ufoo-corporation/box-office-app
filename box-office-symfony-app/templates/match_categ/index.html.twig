@@ -43,12 +43,16 @@
                      <!--- Rediriger vers le billet correspondant au match-->
             </div>
 
+            {% if date != 'Dimanche 23 mai' %}
+
             <div class="categorie annexe">
                     <header> Courts annexes </header>
                     <h3> {{annexe}} places restantes </h3>
                     <button class="slide" onclick="window.location.href = '{{ path("choix_options", { 'id' : id, 'type' : 4}) }}';">ACCES >></button>
                      <!--- Rediriger vers le billet correspondant au match-->
             </div>
+
+            {% endif %}
 
 
 

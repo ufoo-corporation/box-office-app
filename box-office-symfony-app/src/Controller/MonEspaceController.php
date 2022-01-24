@@ -17,6 +17,7 @@ class MonEspaceController extends AbstractController
     #[Route('/mon-espace', name: 'mon_espace')]
     public function mon_espace(TicketRepository $ticketRepository, DayRepository $dayRepository, Request $request): Response
     {
+        $categories=[];
         $session = $request->getSession();
         $tickets = $ticketRepository->findBy(
             ['user' => $session->get('id')],

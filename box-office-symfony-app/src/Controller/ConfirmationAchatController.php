@@ -16,7 +16,7 @@ class ConfirmationAchatController extends AbstractController
     #[Route('/confirmation-achat/{id}/{type}', name: 'confirmation_achat')]
     public function index(Day $day, $type, ManagerRegistry $doctrine, Request $request): Response
     {
-        $entityManager = $doctrine->getManager();
+        
 
         $date = $day->getDate();
         $index = $day->getId();
@@ -88,10 +88,9 @@ class ConfirmationAchatController extends AbstractController
         $ticket->setNbPlacesEnfant($_POST['nbPlaceChild']);
         $ticket->setDay($index);
         $ticket->setUser($session->get('id'));
+        $session->set('ticket', $ticket);
 
-        $entityManager->persist($ticket);
-
-        $entityManager->flush();
+        
 
         return $this->render('confirmation_achat/index.html.twig', [
             'date' => $date,
