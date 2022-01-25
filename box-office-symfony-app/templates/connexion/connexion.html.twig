@@ -13,7 +13,12 @@
             
             <form action="connexion" method="post">
             
-                <h2 class="form-title">CONNEXION</h2>    
+                <h2 class="form-title">CONNEXION</h2>
+                {% if erreur == true %}
+                <div class="form-redirect">
+                    <p> Identifiants erronés</p>
+                </div>
+                {% endif %}
                 <div class="form-element">
                     {{form_row(form.mail)}}
                 </div>

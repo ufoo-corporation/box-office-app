@@ -223,7 +223,7 @@ html, body{
     flex-direction: column;
     margin-top:60px;
 	color:white;
-	min-height:calc(100% - (70px + 180px));
+	min-height:calc(100% - (70px + 70px));
 	background: #404d97;
 }
 
@@ -653,7 +653,7 @@ div.annexe{
 	margin-top:70px;
 	padding: 50px;
 	color:white;
-	min-height:calc(100% - (70px + 230px));
+	min-height:calc(100% - (70px + 70px));
 	background: #404d97;
 }
 

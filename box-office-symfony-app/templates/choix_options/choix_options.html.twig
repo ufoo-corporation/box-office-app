@@ -67,8 +67,14 @@
                 {% endif %}
                 
                 <div class="billets-form-button">
+                    
                     <button type="submit" class="billets-submit">
+                    {% if app.session.get('user') == null %}
+                        Se connecter
+                    {% else %}
                         Payer les places
+                    {% endif %}
+                        
                     </button>
                 </div>   
 

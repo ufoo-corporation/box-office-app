@@ -16,6 +16,14 @@
     </header>
 
     <div class="mes-achats-liste">
+    {% if tickets == null %}
+        <div class="mes-achats-element">
+            <h1>Aucun billet :(</h1>
+            <div class="mes-achats-element-infos">
+            <h2>Achetez des billets depuis l'onglet 'Choix jour' en étant connecté.</h2>
+            </div>
+        </div>
+    {% endif %}
 
     {% for ticket in tickets %}
 

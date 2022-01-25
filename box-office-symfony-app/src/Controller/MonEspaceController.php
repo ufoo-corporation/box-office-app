@@ -37,6 +37,7 @@ class MonEspaceController extends AbstractController
             'tickets' => $tickets,
             'days' => $days,
             'categories' => $categories,
+            
         ]);
     }
 }
