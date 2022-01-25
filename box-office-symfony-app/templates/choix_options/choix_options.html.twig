@@ -52,17 +52,17 @@
 
                 {% if type != 3 %}
                     <div class="billets-form-element element-borderbottom">
-                        <label for="nb-select">Nombre de place</label>
+                        <label for="nb-select">Nombre de places</label>
                         <input type="number" min="1" name="nbPlaceAdult"  class="nbBillet" value="1" required>
                     </div>              
                 {% else %}
                     <div class="billets-form-element element-borderbottom">
-                        <label for="nb-select">Nombre de place Adultes</label>
+                        <label for="nb-select">Nombre de places Adultes</label>
                         <input type="number" min="1" name="nbPlaceAdult" class="nbBillet" required>
                     </div>
                     <div class="billets-form-element element-borderbottom">
-                        <label for="nb-select">Nombre de place -12 ans</label>
-                        <input type="number" min="1" name="nbPlaceChild" class="nbBillet" required>
+                        <label for="nb-select">Nombre de places -12 ans</label>
+                        <input type="number" min="0" name="nbPlaceChild" class="nbBillet" required>
                     </div>
                 {% endif %}
                 
